@@ -45,6 +45,7 @@ public class WallGridManager : MonoBehaviour
         _allWalls=new List<Transform>(_countX*_countZ);
         _positionDic=new Dictionary<Transform, Vector3>();
         _rotationDic=new Dictionary<Transform, Quaternion>();
+
         for (int z = 0; z < _countZ; z++)
         {
             for (int x = 0; x < _countX; x++)
@@ -64,8 +65,18 @@ public class WallGridManager : MonoBehaviour
 
         foreach (var w in _allWalls)
         {
-            w.GetComponent<StateMachineController>().SetSources(sourcesToGive);
-            w.GetComponent<StateMachineController>().SetEnemy(_enemysToGive);
+            if (w.GetComponent<StateMachineController>())
+            {
+                w.GetComponent<StateMachineController>().SetSources(sourcesToGive);
+                w.GetComponent<StateMachineController>().SetEnemy(_enemysToGive);
+            }
+
+            if (w.GetComponent<SimpleAI>())
+            {
+                int t = Random.Range(0, 3);
+                w.GetComponent<SimpleAI>().SetType(t);
+            }
+
             _positionDic.Add(w,w.localPosition);
             _rotationDic.Add(w,w.localRotation);
         }

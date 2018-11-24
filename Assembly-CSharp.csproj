@@ -78,6 +78,7 @@
     <Compile Include="Assets\PluggableAI\Scripts\StateController.cs" />
     <Compile Include="Assets\PluggableAI\Scripts\Transition.cs" />
     <Compile Include="Assets\StateMachineTest\Scripts\Application\EnemyControl.cs" />
+    <Compile Include="Assets\StateMachineTest\Scripts\Application\SimpleAI.cs" />
     <Compile Include="Assets\StateMachineTest\Scripts\Application\WallGridManager.cs" />
     <Compile Include="Assets\StateMachineTest\Scripts\FrameWork\Base\StateMachineAction.cs" />
     <Compile Include="Assets\StateMachineTest\Scripts\FrameWork\Base\StateMachineController.cs" />
@@ -459,6 +460,20 @@
     <Reference Include="Boo.Lang">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/Boo.Lang.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Unity.Recorder.Editor.csproj">
+      <Project>{B4110AD4-AC3B-33FF-10F6-0C5F41887490}</Project>
+      <Name>Unity.Recorder.Editor</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.csproj">
+      <Project>{E690EEEB-474D-5A72-03B7-CF917662108C}</Project>
+      <Name>Unity.Recorder</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.Recorder.Samples.csproj">
+      <Project>{79E589DF-99C6-E709-EE81-2F86A1080686}</Project>
+      <Name>Unity.Recorder.Samples</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
