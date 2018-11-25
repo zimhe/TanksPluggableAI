@@ -79,6 +79,7 @@
     <Compile Include="Assets\PluggableAI\Scripts\Transition.cs" />
     <Compile Include="Assets\StateMachineTest\Scripts\Application\EnemyControl.cs" />
     <Compile Include="Assets\StateMachineTest\Scripts\Application\SimpleAI.cs" />
+    <Compile Include="Assets\StateMachineTest\Scripts\Application\SimpleAIFlock.cs" />
     <Compile Include="Assets\StateMachineTest\Scripts\Application\WallGridManager.cs" />
     <Compile Include="Assets\StateMachineTest\Scripts\FrameWork\Base\StateMachineAction.cs" />
     <Compile Include="Assets\StateMachineTest\Scripts\FrameWork\Base\StateMachineController.cs" />

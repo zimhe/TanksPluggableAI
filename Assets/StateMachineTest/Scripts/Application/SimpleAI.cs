@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -60,12 +60,12 @@ public class SimpleAI : MonoBehaviour
 
     private void Update()
     {
-      
+
 
         int flag = 0;
 
-        if (toFollow == null||toFollow.GetComponent<SimpleAI>().isFollowing(transform))
-        {
+       
+        
             transform.localPosition += transform.forward * _moveSpeed * direction * Time.deltaTime;
             transform.localPosition += transform.up * _moveSpeed * directionUp * Time.deltaTime;
             transform.Rotate(Vector3.up * _rotateSpeed * rotate * Time.deltaTime);
@@ -133,30 +133,27 @@ public class SimpleAI : MonoBehaviour
                 rotate = 0f;
                 rotateRight = 0f;
             }
-        }
-        else
-        {
-            transform.localPosition = Vector3.Lerp(transform.localPosition, toFollow.localPosition, Time.deltaTime * _followSpeed);
-        }
+        
+       
 
-      
+
     }
 
 
-    bool lookAt(Vector3 dir,float range)
+    bool lookAt(Vector3 dir, float range)
     {
 
         bool sawSomething = false;
 
-        Debug.DrawRay(transform.position, dir*range,lookColor);
+        Debug.DrawRay(transform.position, dir * range, lookColor);
 
         RaycastHit hit;
 
-        bool b = Physics.Raycast(transform.position,dir,out hit,range);
+        bool b = Physics.Raycast(transform.position, dir, out hit, range);
 
         if (b == true)
         {
-            if (hit.transform.CompareTag("Objects")&&hit.transform!=transform)
+            if (hit.transform.CompareTag("Objects") && hit.transform != transform)
             {
                 sawSomething = true;
             }
@@ -170,7 +167,7 @@ public class SimpleAI : MonoBehaviour
             }
 
         }
-        
+
 
         return sawSomething;
     }
@@ -179,5 +176,5 @@ public class SimpleAI : MonoBehaviour
 
 public enum BlockTypes
 {
-    Type_A,Type_B,Type_C
+    Type_A, Type_B, Type_C
 }

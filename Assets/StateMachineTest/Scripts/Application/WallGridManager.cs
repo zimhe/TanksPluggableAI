@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using System;
 using UnityEngine;
 
 public class WallGridManager : MonoBehaviour
@@ -73,9 +75,15 @@ public class WallGridManager : MonoBehaviour
 
             if (w.GetComponent<SimpleAI>())
             {
-                int t = Random.Range(0, 3);
+                int t = UnityEngine.Random.Range(0, 3);
                 w.GetComponent<SimpleAI>().SetType(t);
             }
+            if (w.GetComponent<SimpleAIFlock>())
+            {
+                int t = UnityEngine.Random.Range(0, 3);
+                w.GetComponent<SimpleAIFlock>().SetType(t);
+            }
+
 
             _positionDic.Add(w,w.localPosition);
             _rotationDic.Add(w,w.localRotation);
